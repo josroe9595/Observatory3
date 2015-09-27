@@ -99,10 +99,7 @@ angular.module('observatory3App')
             window.alert("Error removing user from project!");
         });
     };
-
-   
-
-
+ 
     $scope.checkUserProject = function() {
         $scope.userOnProject = $scope.user.projects.indexOf($scope.project._id) !== -1;
     };
@@ -130,8 +127,6 @@ angular.module('observatory3App')
 }).directive('pname', function() {
     return {
         restrict:'E',
-        template: '<input type=\'text\' maxlength="50" ng-show=\'edittingName && userOnProject\' ng-model=\'project.name\' ></textarea> \
-            <div ng-show=\'edittingName && userOnProject\'>'
-
+        template: '<input type=\'text\' maxlength="50" ng-show=\'edittingName && userOnProject\' ng-model=\'project.name\'><br>'
     };
 })
