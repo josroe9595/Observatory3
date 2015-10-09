@@ -17,4 +17,17 @@ describe('GET /api/projects', function() {
         done();
       });
   });
+  it('user must be authenticated', function(done)){
+    request(app)
+      .post('/')
+      .expect(400)
+      .send({name:"Name."})
+      .expect('Content-Type', /json/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        res.body.should.be.instanceof(Array);
+        done();
+      });
+  });
+  
 });
