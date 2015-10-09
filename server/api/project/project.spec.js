@@ -20,8 +20,14 @@ describe('GET /api/projects', function() {
   it('user must be authenticated', function(done)){
     request(app)
       .post('/')
-      .expect(400)
-      .send({name:"Name."})
+      .send({
+      name: 'Observatory',
+      description: 'cool project',
+      repositoryUrl: 'https://github.com/rcos/Observatory3/'
+      githubUsername: 'rcos',
+      githubProjectName:
+      })
+      .expect(401)
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
