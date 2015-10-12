@@ -28,7 +28,7 @@ describe('GET /api/projects', function() {
       githubProjectName: 'Lab6'
       })
       .expect(401)
-      .expect('Content-Type', /json/)
+      .expect('Content-Type', "text/html")
       .end(function(err, res) {
         if (err) return done(err);
         res.body.should.be.instanceof(Array);
