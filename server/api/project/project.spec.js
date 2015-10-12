@@ -24,7 +24,8 @@ describe('GET /api/projects', function() {
       name: 'Observatory',
       description: 'cool project',
       repositoryUrl: 'https://github.com/rcos/Observatory3/',
-      githubUsername: 'rcos'
+      githubUsername: 'rcos',
+      githubProjectName: 'Lab6'
       })
       .expect(401)
       .expect('Content-Type', /json/)
